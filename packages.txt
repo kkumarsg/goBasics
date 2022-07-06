@@ -1,0 +1,69 @@
+                        --------
+                        Packages
+                        --------
+
+* Every GO program must be inside a package declaration called 'main'
+    package main
+* Import statement syntax is as given below
+    import (
+        "fmt"
+        "math/rand"
+        )
+* In GO, all the functions and variables exported can be accessed by starting them with a capital.
+    fmt.Println("The value of PI is ",math.Pi)
+
+
+                    -----------------------
+                    Functions and Variables
+                    -----------------------
+
+* In GO, the type of the function or variables go after the method/variable name.
+    ex:
+        func add(x int, y int) int {
+            return x+y;
+        }
+* You can combine the variable type declaration for variables of same type.
+    x int, y int is same as x, y int
+* A function can return any number of results.
+    func swap(x int, y int) (int, int) {
+        return y, x;
+    }
+
+    The values returned by the function can be accessed as given below
+    x, y := swap(4,5) // x=5, y=4 after this statement, the types will be auto-detected.
+* Naked return -> It's possible to return the values by not returning them but by just specifying the fields that will be returned.
+    func split(sum int) (x, y int) {
+    	x = sum * 4 / 9
+    	y = sum - x
+    	return
+    }
+
+    The above function returns x and y, since they're being asked to return in the declaration.
+* 'var' can define a list of variables. The type will be at the end.
+   The 'var' can be used inside the function or as an global variable.
+        var isValid, istrue, bool
+   it's possible to declare and assign values to 'var'
+        var c, python, java = true, false, "no!"
+* We could use ':=' instead of 'var' inside a function. However, the same is not available outside a function.
+    i := getSum(3,4)
+
+
+                        ----------
+                        Data Types
+                        ----------
+
+* The data types available in GO are
+    Integer -> (int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64, uintptr)
+    Byte    -> (byte same as uint8)
+    string
+    bool
+    Float -> (float32, float64)
+    Imaginary -> complex64, complex128
+* Type conversion can be done as shown below
+    to convert a float to int.
+    var i int = 5
+    var f float64 = float(i)
+* Type will be auto inferred if it's not defined.
+* Constants cannot be declared with 'var' or ':'.
+  They must be declared by starting with 'const'
+  They can be declared in both inside functions as well as anywhere inside the package.
